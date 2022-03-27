@@ -1,0 +1,26 @@
+<!-- Cabecera que se utilizará en otras páginas, para ello es necesario
+importarlo y exportarlo en el módulo components y hacer un import del 
+módulo component en el módulo de la página correspondiente -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- defaultHref para que si se recarga la página se muestre
+      igualmente el botón de atrás -->
+      <!-- mode="ios" nos permite decirle que un componente tiene la 
+      apariencia de uno de ios, si fuese mode="md" que es el defecto en 
+      android utilizaría material design, ver más en : 
+    https://ionicframework.com/docs/theming/platform-styles
+  -->
+
+      <ion-back-button
+        defaultHref="/"
+        text="Regresar"
+        color="primary"
+        mode="ios"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">{{ titulo }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> </ion-content>
