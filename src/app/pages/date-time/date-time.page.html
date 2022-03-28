@@ -1,0 +1,37 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de nacimiento:{{fechaDDMMYYYY}} </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <!-- No me funciona el display-format posiblemente sea de versiones anteriores de IONIC -->
+      <ion-datetime
+        [value]="fecha.toISOString()"
+        (ionChange)="cambioDeFecha($event)"
+        display-format="DD.MMMM.YYYY"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-datetime
+        [value]="fecha.toISOString()"
+        (ionChange)="cambioDeFecha($event)"
+        min="2022-01-01"
+        max="2022-12-31"
+      ></ion-datetime>
+    </ion-item>
+
+    <!-- Custom buttons -->
+    <ion-datetime [yearValues]="misAnyosValidos">
+      <ion-buttons slot="buttons">
+        <ion-button (click)="confirm()">Ok!</ion-button>
+        <ion-button (click)="reset()">Reset</ion-button>
+      </ion-buttons>
+    </ion-datetime>
+  </ion-list>
+</ion-content>
