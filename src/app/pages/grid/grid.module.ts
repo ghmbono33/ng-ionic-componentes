@@ -4,20 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FabPageRoutingModule } from './fab-routing.module';
+import { GridPageRoutingModule } from './grid-routing.module';
 
-import { FabPage } from './fab.page';
+import { GridPage } from './grid.page';
 import { ComponentsModule } from '../../components/components.module';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FabPageRoutingModule,
+    GridPageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [FabPage],
+  declarations: [GridPage],
 })
-export class FabPageModule {}
+export class GridPageModule {}

@@ -1,23 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { FabPageRoutingModule } from './fab-routing.module';
-
-import { FabPage } from './fab.page';
 import { ComponentsModule } from '../../components/components.module';
-import { HeaderComponent } from '../../components/header/header.component';
+import { InfinitePageRoutingModule } from './infinite-routing.module';
+import { InfinitePage } from './infinite.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FabPageRoutingModule,
+    InfinitePageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [FabPage],
+  declarations: [InfinitePage],
 })
-export class FabPageModule {}
+export class InfinitePageModule {}
