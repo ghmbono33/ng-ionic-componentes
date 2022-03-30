@@ -1,0 +1,51 @@
+<app-header [titulo]="nombre || 'Input Forms'"></app-header>
+<ion-content class="ion-padding">
+  <!-- Documentación en https://ionicframework.com/docs/api/input -->
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Input normal</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input
+        [(ngModel)]="nombre"
+        type="text"
+        placeholder="Awesome Input"
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- #formulario es la referencia local al form -->
+  <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+    <ion-list-header>
+      <ion-label>Formulario válido: {{formulario.valid}}</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input
+        [(ngModel)]="usuario.email"
+        type="email"
+        placeholder="Email"
+        name="email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input
+        [(ngModel)]="usuario.password"
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-button type="submit" [disabled]="formulario.invalid" expand="block">
+      Guardar
+    </ion-button>
+    <ion-item>
+      <ion-label><small>{{formulario.value | json}}</small></ion-label>
+    </ion-item>
+  </form>
+</ion-content>

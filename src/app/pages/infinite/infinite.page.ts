@@ -16,6 +16,7 @@ export class InfinitePage implements OnInit {
     console.log(event);
     setTimeout(() => {
       if (this.data.length > 70) {
+        //Dejamos de cargar más elementos
         this.infiniteScroll.complete();
         this.infiniteScroll.disabled = true;
         return;
