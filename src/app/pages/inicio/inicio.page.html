@@ -1,5 +1,19 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-menu-button menu="menuPrincipal" color="primary"></ion-menu-button>
+      </ion-buttons>
+      <!-- Otra forma de mostrar el botón del menú más compleja y que además 
+      requiere código en el archivo ts -->
+      <!-- <ion-button (click)="mostrarMenu()">
+        <ion-icon
+          slot="icon-only"
+          name="menu-outline"
+          color="primary"
+        ></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
     <ion-title color="primary">Componentes</ion-title>
   </ion-toolbar>
 </ion-header>

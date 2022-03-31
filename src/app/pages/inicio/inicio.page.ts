@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 interface Componente {
   icon: string;
   name: string;
@@ -71,8 +72,22 @@ export class InicioPage implements OnInit {
       name: 'List - Sliding',
       redirecTo: '/list',
     },
+    {
+      icon: 'reorder-three-outline',
+      name: 'List - Reorder',
+      redirecTo: '/list-reorder',
+    },
+    {
+      icon: 'refresh-circle-outline',
+      name: 'Loading',
+      redirecTo: '/loading',
+    },
   ];
-  constructor() {}
+  constructor(private menuController: MenuController) {}
 
   ngOnInit() {}
+  // mostrarMenu() {
+  //   // El menú está definido en app.component.html
+  //   this.menuController.open('menuPrincipal');
+  // }
 }
