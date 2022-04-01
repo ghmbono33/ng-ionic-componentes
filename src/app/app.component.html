@@ -1,17 +1,33 @@
 <ion-app>
+  <!--lo había hecho llamando a cerrarMenu en el evento click
+  y funciona correctamente, luego lo he sustuido por los ion-menu-toogle -->
+  <!-- <ion-menu
+    side="start"
+    menuId="menuPrincipal"
+    contentId="main"
+    (click)="cerrarMenu()"
+  > -->
   <ion-menu side="start" menuId="menuPrincipal" contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>Componentes</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
+        <!-- El ion-menu-toogle nos sirve para que una vez hagamos click 
+        en la opción del menú éste se oculte. También es posible prescindir
+      del ion-menu-toogle. Hay que tener en cuenta que el ngFor tiene que
+    ir ahí y no en el ion-item.
+    Otra opción es poner un (click)="cerrarMenu()" y programar éste, 
+    ver archivo ts -->
+        <ion-menu-toggle *ngFor="let c of componentes | async">
+          <!-- detail muestra el > a la derecha de la opción -->
+          <ion-item [routerLink]="c.redirecTo" detail
+            >{{ c.name }}
+            <ion-icon slot="start" [name]="c.icon"></ion-icon>
+          </ion-item>
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>

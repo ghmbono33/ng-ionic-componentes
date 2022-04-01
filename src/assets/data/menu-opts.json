@@ -68,5 +68,15 @@
     "icon": "refresh-circle-outline",
     "name": "Loading",
     "redirecTo": "/loading"
+  },
+  {
+    "icon": "tablet-portrait-outline",
+    "name": "modal",
+    "redirecTo": "/modal"
+  },
+  {
+    "icon": "phone-portrait-outline",
+    "name": "popover",
+    "redirecTo": "/popover"
   }
 ]
