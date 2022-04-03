@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>search-selec propio</ion-title>
+  </ion-toolbar>
+  <!-- debounce es el tiempo de espera en milisegundos -->
+  <ion-searchbar
+    [placeholder]="'Buscar por ' + campo.value "
+    inputmode="text"
+    animated
+    (ionChange)="buscar($event)"
+    [debounce]="200"
+    [value]="texto"
+  ></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <!-- mba: he creado este selec para que pueda buscar por título o id -->
+  <select #campo (change)="texto = ''">
+    <option value="title">title</option>
+    <option value="id">id</option>
+  </select>
+
+  <ion-list>
+    <ion-item *ngFor="let item of albums | filtro: texto:campo.value">
+      <ion-label>{{item.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
